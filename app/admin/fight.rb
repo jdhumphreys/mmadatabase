@@ -1,5 +1,7 @@
 ActiveAdmin.register Fight do
 
+ permit_params :fighter, :fighter2, :venue, :result, :date, :tagline, :attendance, :poster
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
