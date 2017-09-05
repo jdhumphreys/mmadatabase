@@ -1,6 +1,7 @@
 class FightsController < ApplicationController
   def index
-    @fights = Fight.page(params[:page]).per(10)
+    @q = Fight.ransack(params[:q])
+    @fights = @q.result(:distinct => true).includes(:fighter, :fighter2, :venue).page(params[:page]).per(10)
 
     render("fights/index.html.erb")
   end

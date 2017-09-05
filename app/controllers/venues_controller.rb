@@ -10,7 +10,8 @@ class VenuesController < ApplicationController
   end
 
   def index
-    @venues = Venue.page(params[:page]).per(10)
+    @q = Venue.ransack(params[:q])
+    @venues = @q.result(:distinct => true).includes(:venue_creator, :fights).page(params[:page]).per(10)
 
     render("venues/index.html.erb")
   end

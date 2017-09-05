@@ -10,7 +10,8 @@ class FightersController < ApplicationController
   end
 
   def index
-    @fighters = Fighter.page(params[:page]).per(10)
+    @q = Fighter.ransack(params[:q])
+    @fighters = @q.result(:distinct => true).includes(:profile_creator, :fights, :bsides).page(params[:page]).per(10)
 
     render("fighters/index.html.erb")
   end
