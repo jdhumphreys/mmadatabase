@@ -55,14 +55,8 @@
         <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @fighter.last_name %>">
       </div>
 
-      <!-- Label and input for created_by -->
-      <div class="form-group">
-        <label for="created_by" class="control-label">
-          Created by
-        </label>
-
-        <%= select_tag(:created_by, options_from_collection_for_select(User.all, :id, :email, @fighter.created_by), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for updated_by -->
       <div class="form-group">
