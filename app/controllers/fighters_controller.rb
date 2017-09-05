@@ -16,6 +16,7 @@ class FightersController < ApplicationController
   end
 
   def show
+    @fight = Fight.new
     @fighter = Fighter.find(params[:id])
 
     render("fighters/show.html.erb")

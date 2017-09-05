@@ -16,6 +16,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @fight = Fight.new
     @venue = Venue.find(params[:id])
 
     render("venues/show.html.erb")

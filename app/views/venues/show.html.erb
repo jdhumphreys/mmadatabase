@@ -74,6 +74,89 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_fight" method="post" enctype="multipart/form-data">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for fighter -->
+      <div class="form-group">
+        <label for="fighter" class="control-label">
+          Fighter
+        </label>
+
+        <%= select_tag(:fighter, options_from_collection_for_select(Fighter.all, :id, :wins), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for fighter2 -->
+      <div class="form-group">
+        <label for="fighter2" class="control-label">
+          Fighter2
+        </label>
+
+        <%= select_tag(:fighter2, options_from_collection_for_select(Fighter.all, :id, :wins), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for venue -->
+      <div class="form-group">
+        <label for="venue" class="control-label">
+          Venue
+        </label>
+
+        <%= select_tag(:venue, options_from_collection_for_select(Venue.all, :id, :city), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for result -->
+      <div class="form-group">
+        <label for="result" class="control-label">
+          Result
+        </label>
+
+        <input type="text" id="result" name="result" placeholder="Result" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for tagline -->
+      <div class="form-group">
+        <label for="tagline" class="control-label">
+          Tagline
+        </label>
+
+        <input type="text" id="tagline" name="tagline" placeholder="Tagline" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for attendance -->
+      <div class="form-group">
+        <label for="attendance" class="control-label">
+          Attendance
+        </label>
+
+        <input type="text" id="attendance" name="attendance" placeholder="Attendance" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for poster -->
+      <div class="form-group">
+        <label for="poster" class="control-label">
+          Poster
+        </label>
+
+        <input type="file" id="poster" name="poster" class="form-control">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Fight
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
