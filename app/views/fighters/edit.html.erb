@@ -60,7 +60,7 @@
           Created by
         </label>
 
-        <input type="text" id="created_by" name="created_by" placeholder="Created by" class="form-control" value="<%= @fighter.created_by %>">
+        <%= select_tag(:created_by, options_from_collection_for_select(User.all, :id, :email, @fighter.created_by), :class => "form-control") %>
       </div>
 
       <!-- Label and input for updated_by -->
