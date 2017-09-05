@@ -21,7 +21,13 @@
       <dd><%= @venue.capacity %></dd>
 
       <dt>Created by</dt>
-      <dd><%= @venue.created_by %></dd>
+      <dd>
+        <% if @venue.venue_creator.present? %>
+          <a href="/users/<%= @venue.created_by %>">
+            <%= @venue.venue_creator.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Pic</dt>
       <dd><img src="<%= @venue.pic %>" class="img-responsive"></dd>

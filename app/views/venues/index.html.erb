@@ -27,7 +27,13 @@
         <td><%= venue.name %></td>
         <td><%= venue.country %></td>
         <td><%= venue.capacity %></td>
-        <td><%= venue.venue_creator.email %></td>
+        <td>
+          <% if venue.venue_creator.present? %>
+            <a href="/users/<%= venue.venue_creator.id %>">
+              <%= venue.venue_creator.email %>
+            </a>
+          <% end %>
+        </td>
         <td><img src='<%= venue.pic %>' class='img-responsive'></td>
         <td><%= venue.updated_by %></td>
         <td>

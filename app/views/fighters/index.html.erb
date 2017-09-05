@@ -27,7 +27,13 @@
         <td><img src='<%= fighter.pic %>' class='img-responsive'></td>
         <td><%= fighter.first_name %></td>
         <td><%= fighter.last_name %></td>
-        <td><%= fighter.profile_creator.email %></td>
+        <td>
+          <% if fighter.profile_creator.present? %>
+            <a href="/users/<%= fighter.profile_creator.id %>">
+              <%= fighter.profile_creator.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= fighter.updated_by %></td>
         <td><%= fighter.losses %></td>
         <td><%= fighter.draws %></td>

@@ -18,7 +18,13 @@
       <dd><%= @fighter.last_name %></dd>
 
       <dt>Created by</dt>
-      <dd><%= @fighter.created_by %></dd>
+      <dd>
+        <% if @fighter.profile_creator.present? %>
+          <a href="/users/<%= @fighter.created_by %>">
+            <%= @fighter.profile_creator.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Updated by</dt>
       <dd><%= @fighter.updated_by %></dd>

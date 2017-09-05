@@ -6,13 +6,31 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Fighter</dt>
-      <dd><%= @fight.fighter %></dd>
+      <dd>
+        <% if @fight.fighter.present? %>
+          <a href="/fighters/<%= @fight.fighter %>">
+            <%= @fight.fighter.wins %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Fighter2</dt>
-      <dd><%= @fight.fighter2 %></dd>
+      <dd>
+        <% if @fight.fighter2.present? %>
+          <a href="/fighters/<%= @fight.fighter2 %>">
+            <%= @fight.fighter2.wins %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Venue</dt>
-      <dd><%= @fight.venue %></dd>
+      <dd>
+        <% if @fight.venue.present? %>
+          <a href="/venues/<%= @fight.venue %>">
+            <%= @fight.venue.city %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Result</dt>
       <dd><%= @fight.result %></dd>

@@ -22,9 +22,21 @@
 
       <% @fights.each do |fight| %>
       <tr>
-        <td><%= fight.fighter.wins %></td>
+        <td>
+          <% if fight.fighter.present? %>
+            <a href="/fighters/<%= fight.fighter.id %>">
+              <%= fight.fighter.wins %>
+            </a>
+          <% end %>
+        </td>
         <td><%= fight.fighter.wins2 %></td>
-        <td><%= fight.venue.city %></td>
+        <td>
+          <% if fight.venue.present? %>
+            <a href="/venues/<%= fight.venue.id %>">
+              <%= fight.venue.city %>
+            </a>
+          <% end %>
+        </td>
         <td><%= fight.result %></td>
         <td><%= fight.date %></td>
         <td><%= fight.tagline %></td>
