@@ -1,0 +1,109 @@
+<!-- Validation failure messages -->
+<% if @fighter.errors.any? %>
+  <% @fighter.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Fighter</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_fighter" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for wins -->
+      <div class="form-group">
+        <label for="wins" class="control-label">
+          Wins
+        </label>
+
+        <input type="text" id="wins" name="wins" placeholder="Wins" class="form-control" value="<%= @fighter.wins %>">
+      </div>
+
+      <!-- Label and input for pic -->
+      <div class="form-group">
+        <label for="pic" class="control-label">
+          Pic
+        </label>
+
+        <input type="text" id="pic" name="pic" placeholder="Pic" class="form-control" value="<%= @fighter.pic %>">
+      </div>
+
+      <!-- Label and input for first_name -->
+      <div class="form-group">
+        <label for="first_name" class="control-label">
+          First name
+        </label>
+
+        <input type="text" id="first_name" name="first_name" placeholder="First name" class="form-control" value="<%= @fighter.first_name %>">
+      </div>
+
+      <!-- Label and input for last_name -->
+      <div class="form-group">
+        <label for="last_name" class="control-label">
+          Last name
+        </label>
+
+        <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @fighter.last_name %>">
+      </div>
+
+      <!-- Label and input for created_by -->
+      <div class="form-group">
+        <label for="created_by" class="control-label">
+          Created by
+        </label>
+
+        <input type="text" id="created_by" name="created_by" placeholder="Created by" class="form-control" value="<%= @fighter.created_by %>">
+      </div>
+
+      <!-- Label and input for updated_by -->
+      <div class="form-group">
+        <label for="updated_by" class="control-label">
+          Updated by
+        </label>
+
+        <input type="text" id="updated_by" name="updated_by" placeholder="Updated by" class="form-control" value="<%= @fighter.updated_by %>">
+      </div>
+
+      <!-- Label and input for losses -->
+      <div class="form-group">
+        <label for="losses" class="control-label">
+          Losses
+        </label>
+
+        <input type="text" id="losses" name="losses" placeholder="Losses" class="form-control" value="<%= @fighter.losses %>">
+      </div>
+
+      <!-- Label and input for draws -->
+      <div class="form-group">
+        <label for="draws" class="control-label">
+          Draws
+        </label>
+
+        <input type="text" id="draws" name="draws" placeholder="Draws" class="form-control" value="<%= @fighter.draws %>">
+      </div>
+
+      <!-- Label and input for no_contests -->
+      <div class="form-group">
+        <label for="no_contests" class="control-label">
+          No contests
+        </label>
+
+        <input type="text" id="no_contests" name="no_contests" placeholder="No contests" class="form-control" value="<%= @fighter.no_contests %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Fighter
+      </button>
+      or
+      <a href="/fighters">Cancel</a>
+    </form>
+  </div>
+</div>
