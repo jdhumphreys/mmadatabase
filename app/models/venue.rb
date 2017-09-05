@@ -1,4 +1,6 @@
 class Venue < ApplicationRecord
+  mount_uploader :pic, PicUploader
+
   # Direct associations
 
   has_many   :fights,

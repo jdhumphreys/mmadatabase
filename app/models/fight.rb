@@ -1,4 +1,6 @@
 class Fight < ApplicationRecord
+  mount_uploader :poster, PosterUploader
+
   # Direct associations
 
   belongs_to :venue

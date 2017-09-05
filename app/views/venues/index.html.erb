@@ -28,7 +28,7 @@
         <td><%= venue.country %></td>
         <td><%= venue.capacity %></td>
         <td><%= venue.venue_creator.email %></td>
-        <td><%= venue.pic %></td>
+        <td><img src='<%= venue.pic %>' class='img-responsive'></td>
         <td><%= venue.updated_by %></td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>

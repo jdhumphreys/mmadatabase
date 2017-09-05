@@ -24,7 +24,7 @@
       <% @fighters.each do |fighter| %>
       <tr>
         <td><%= fighter.wins %></td>
-        <td><%= fighter.pic %></td>
+        <td><img src='<%= fighter.pic %>' class='img-responsive'></td>
         <td><%= fighter.first_name %></td>
         <td><%= fighter.last_name %></td>
         <td><%= fighter.profile_creator.email %></td>

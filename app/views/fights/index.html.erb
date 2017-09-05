@@ -29,7 +29,7 @@
         <td><%= fight.date %></td>
         <td><%= fight.tagline %></td>
         <td><%= fight.attendance %></td>
-        <td><%= fight.poster %></td>
+        <td><img src='<%= fight.poster %>' class='img-responsive'></td>
         <td>
           <a href="/fights/<%= fight.id %>" class="btn btn-primary">Show</a>
           <a href="/fights/<%= fight.id %>/edit" class="btn btn-warning">Edit</a>
