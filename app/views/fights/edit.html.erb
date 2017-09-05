@@ -42,7 +42,7 @@
           Venue
         </label>
 
-        <input type="text" id="venue" name="venue" placeholder="Venue" class="form-control" value="<%= @fight.venue %>">
+        <%= select_tag(:venue, options_from_collection_for_select(Venue.all, :id, :city, @fight.venue), :class => "form-control") %>
       </div>
 
       <!-- Label and input for result -->
