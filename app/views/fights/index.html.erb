@@ -22,8 +22,8 @@
 
       <% @fights.each do |fight| %>
       <tr>
-        <td><%= fight.fighter %></td>
-        <td><%= fight.fighter2 %></td>
+        <td><%= fight.fighter.wins %></td>
+        <td><%= fight.fighter.wins2 %></td>
         <td><%= fight.venue %></td>
         <td><%= fight.result %></td>
         <td><%= fight.date %></td>
