@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @fight.errors.any? %>
+  <% @fight.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Fight</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_fight" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for fighter -->
+      <div class="form-group">
+        <label for="fighter" class="control-label">
+          Fighter
+        </label>
+
+        <input type="text" id="fighter" name="fighter" placeholder="Fighter" class="form-control" value="<%= @fight.fighter %>">
+      </div>
+
+      <!-- Label and input for fighter2 -->
+      <div class="form-group">
+        <label for="fighter2" class="control-label">
+          Fighter2
+        </label>
+
+        <input type="text" id="fighter2" name="fighter2" placeholder="Fighter2" class="form-control" value="<%= @fight.fighter2 %>">
+      </div>
+
+      <!-- Label and input for venue -->
+      <div class="form-group">
+        <label for="venue" class="control-label">
+          Venue
+        </label>
+
+        <input type="text" id="venue" name="venue" placeholder="Venue" class="form-control" value="<%= @fight.venue %>">
+      </div>
+
+      <!-- Label and input for result -->
+      <div class="form-group">
+        <label for="result" class="control-label">
+          Result
+        </label>
+
+        <input type="text" id="result" name="result" placeholder="Result" class="form-control" value="<%= @fight.result %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @fight.date %>">
+      </div>
+
+      <!-- Label and input for tagline -->
+      <div class="form-group">
+        <label for="tagline" class="control-label">
+          Tagline
+        </label>
+
+        <input type="text" id="tagline" name="tagline" placeholder="Tagline" class="form-control" value="<%= @fight.tagline %>">
+      </div>
+
+      <!-- Label and input for attendance -->
+      <div class="form-group">
+        <label for="attendance" class="control-label">
+          Attendance
+        </label>
+
+        <input type="text" id="attendance" name="attendance" placeholder="Attendance" class="form-control" value="<%= @fight.attendance %>">
+      </div>
+
+      <!-- Label and input for poster -->
+      <div class="form-group">
+        <label for="poster" class="control-label">
+          Poster
+        </label>
+
+        <input type="text" id="poster" name="poster" placeholder="Poster" class="form-control" value="<%= @fight.poster %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Fight
+      </button>
+      or
+      <a href="/fights">Cancel</a>
+    </form>
+  </div>
+</div>

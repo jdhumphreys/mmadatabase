@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    Fights
+    <a href="/fights/new" class="btn btn-lg btn-success">New Fight</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Fighter</th>
+        <th>Fighter2</th>
+        <th>Venue</th>
+        <th>Result</th>
+        <th>Date</th>
+        <th>Tagline</th>
+        <th>Attendance</th>
+        <th>Poster</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @fights.each do |fight| %>
+      <tr>
+        <td><%= fight.fighter %></td>
+        <td><%= fight.fighter2 %></td>
+        <td><%= fight.venue %></td>
+        <td><%= fight.result %></td>
+        <td><%= fight.date %></td>
+        <td><%= fight.tagline %></td>
+        <td><%= fight.attendance %></td>
+        <td><%= fight.poster %></td>
+        <td>
+          <a href="/fights/<%= fight.id %>" class="btn btn-primary">Show</a>
+          <a href="/fights/<%= fight.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_fight/<%= fight.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

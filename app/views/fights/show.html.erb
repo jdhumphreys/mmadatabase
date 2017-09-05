@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Fight #<%= @fight.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Fighter</dt>
+      <dd><%= @fight.fighter %></dd>
+
+      <dt>Fighter2</dt>
+      <dd><%= @fight.fighter2 %></dd>
+
+      <dt>Venue</dt>
+      <dd><%= @fight.venue %></dd>
+
+      <dt>Result</dt>
+      <dd><%= @fight.result %></dd>
+
+      <dt>Date</dt>
+      <dd><%= @fight.date %></dd>
+
+      <dt>Tagline</dt>
+      <dd><%= @fight.tagline %></dd>
+
+      <dt>Attendance</dt>
+      <dd><%= @fight.attendance %></dd>
+
+      <dt>Poster</dt>
+      <dd><%= @fight.poster %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/fights" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/fights/<%= @fight.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_fight/<%= @fight.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
