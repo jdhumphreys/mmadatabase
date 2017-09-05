@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :fighters,
+             :foreign_key => "created_by",
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations
