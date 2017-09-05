@@ -34,8 +34,11 @@
         <td><%= fighter.no_contests %></td>
         <td>
           <a href="/fighters/<%= fighter.id %>" class="btn btn-primary">Show</a>
-          <a href="/fighters/<%= fighter.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_fighter/<%= fighter.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == fighter.profile_creator %>
+            <a href="/fighters/<%= fighter.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_fighter/<%= fighter.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
