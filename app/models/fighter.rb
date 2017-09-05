@@ -1,6 +1,11 @@
 class Fighter < ApplicationRecord
   # Direct associations
 
+  has_many   :bsides,
+             :class_name => "Fight",
+             :foreign_key => "fighter2",
+             :dependent => :destroy
+
   has_many   :fights
 
   belongs_to :profile_creator,
