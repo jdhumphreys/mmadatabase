@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @venue.errors.any? %>
+  <% @venue.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Venue</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_venue" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @venue.city %>">
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @venue.state %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @venue.name %>">
+      </div>
+
+      <!-- Label and input for country -->
+      <div class="form-group">
+        <label for="country" class="control-label">
+          Country
+        </label>
+
+        <input type="text" id="country" name="country" placeholder="Country" class="form-control" value="<%= @venue.country %>">
+      </div>
+
+      <!-- Label and input for capacity -->
+      <div class="form-group">
+        <label for="capacity" class="control-label">
+          Capacity
+        </label>
+
+        <input type="text" id="capacity" name="capacity" placeholder="Capacity" class="form-control" value="<%= @venue.capacity %>">
+      </div>
+
+      <!-- Label and input for created_by -->
+      <div class="form-group">
+        <label for="created_by" class="control-label">
+          Created by
+        </label>
+
+        <input type="text" id="created_by" name="created_by" placeholder="Created by" class="form-control" value="<%= @venue.created_by %>">
+      </div>
+
+      <!-- Label and input for pic -->
+      <div class="form-group">
+        <label for="pic" class="control-label">
+          Pic
+        </label>
+
+        <input type="text" id="pic" name="pic" placeholder="Pic" class="form-control" value="<%= @venue.pic %>">
+      </div>
+
+      <!-- Label and input for updated_by -->
+      <div class="form-group">
+        <label for="updated_by" class="control-label">
+          Updated by
+        </label>
+
+        <input type="text" id="updated_by" name="updated_by" placeholder="Updated by" class="form-control" value="<%= @venue.updated_by %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Venue
+      </button>
+      or
+      <a href="/venues">Cancel</a>
+    </form>
+  </div>
+</div>
