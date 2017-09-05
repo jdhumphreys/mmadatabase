@@ -32,8 +32,11 @@
         <td><%= venue.updated_by %></td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
-          <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_venue/<%= venue.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == venue.venue_creator %>
+            <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_venue/<%= venue.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

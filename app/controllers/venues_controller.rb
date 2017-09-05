@@ -1,4 +1,14 @@
 class VenuesController < ApplicationController
+  before_action :current_user_must_be_venue_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_venue_user
+    venue = Venue.find(params[:id])
+
+    unless current_user == venue.venue_creator
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @venues = Venue.all
 

@@ -35,12 +35,14 @@
       <a href="/venues" class="btn btn-primary">
         Back
       </a>
-      <a href="/venues/<%= @venue.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_venue/<%= @venue.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @venue.venue_creator %>
+        <a href="/venues/<%= @venue.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_venue/<%= @venue.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
