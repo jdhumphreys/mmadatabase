@@ -1,6 +1,8 @@
 class Fight < ApplicationRecord
   # Direct associations
 
+  belongs_to :venue
+
   belongs_to :fighter2,
              :class_name => "Fighter"
 

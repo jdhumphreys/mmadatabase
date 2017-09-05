@@ -1,6 +1,9 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  has_many   :fights,
+             :dependent => :destroy
+
   belongs_to :venue_creator,
              :class_name => "User",
              :foreign_key => "created_by",
