@@ -1,5 +1,7 @@
 ActiveAdmin.register Fighter do
 
+ permit_params :wins, :pic, :first_name, :last_name, :created_by, :updated_by, :losses, :draws, :no_contests
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
