@@ -33,7 +33,7 @@
           Fighter2
         </label>
 
-        <input type="text" id="fighter2" name="fighter2" placeholder="Fighter2" class="form-control" value="<%= @fight.fighter2 %>">
+        <%= select_tag(:fighter2, options_from_collection_for_select(Fighter.all, :id, :wins, @fight.fighter2), :class => "form-control") %>
       </div>
 
       <!-- Label and input for venue -->
