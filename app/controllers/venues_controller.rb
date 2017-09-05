@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
   end
 
   def index
-    @venues = Venue.all
+    @venues = Venue.page(params[:page]).per(10)
 
     render("venues/index.html.erb")
   end

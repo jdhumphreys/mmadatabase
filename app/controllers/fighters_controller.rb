@@ -10,7 +10,7 @@ class FightersController < ApplicationController
   end
 
   def index
-    @fighters = Fighter.all
+    @fighters = Fighter.page(params[:page]).per(10)
 
     render("fighters/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class FightsController < ApplicationController
   def index
-    @fights = Fight.all
+    @fights = Fight.page(params[:page]).per(10)
 
     render("fights/index.html.erb")
   end
