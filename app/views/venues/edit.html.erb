@@ -63,14 +63,8 @@
         <input type="text" id="capacity" name="capacity" placeholder="Capacity" class="form-control" value="<%= @venue.capacity %>">
       </div>
 
-      <!-- Label and input for created_by -->
-      <div class="form-group">
-        <label for="created_by" class="control-label">
-          Created by
-        </label>
-
-        <%= select_tag(:created_by, options_from_collection_for_select(User.all, :id, :email, @venue.created_by), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for pic -->
       <div class="form-group">

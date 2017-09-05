@@ -64,13 +64,7 @@
       </div>
 
       <!-- Label and input for created_by -->
-      <div class="form-group">
-        <label for="created_by" class="control-label">
-          Created by
-        </label>
-
-        <%= select_tag(:created_by, options_from_collection_for_select(User.all, :id, :email, @venue.created_by), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="created_by" value="<%= current_user.id %>">
 
       <!-- Label and input for pic -->
       <div class="form-group">
